@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carousel Project</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="swiper" id="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/deadpool.png" /></div>
+                <div class="swiper-slide">
+                    <img src="images/doctor-strange.jpg" />
+                </div>
+                <div class="swiper-slide"><img src="images/jack-sparrow.jpg" /></div>
+                <div class="swiper-slide"><img src="images/pennywise.jpg" /></div>
+                <div class="swiper-slide"><img src="images/suicidesquad.jpg" /></div>
+                <div class="swiper-slide"><img src="images/wonder-woman.jpg" /></div>
+            </div>
+
+            <div class="swiper-button-prev" id="prev"></div>
+            <div class="swiper-button-next" id="next"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+    <script>
+        const swiper = new Swiper(".swiper", {
+            loop: true,
+    
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+
+        let img = document.getElementById('swiper');
+        let next = document.getElementById('next');
+        let prev = document.getElementById('prev');
+        img.addEventListener('mouseenter', ()=>{
+              next.style.display = 'block';   
+              prev.style.display = 'block';   
+        });
+
+         img.addEventListener('mouseleave', ()=>{
+              next.style.display = 'none';   
+              prev.style.display = 'none';   
+        })
+    </script>
+</body>
+
+</html>
